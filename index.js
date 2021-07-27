@@ -20,13 +20,13 @@ function strGen(length) {
    return res;
 }
 
-newDirPath = path.join(path.dirname(dirPath), strGen(5))
+const newDirPath = path.join(path.dirname(dirPath), strGen(5));
 
 fs.readdir(argv[0], (err, data) => {
     if(err) {
         console.error(5);
     }
-    console.log(data)
+
     fs.mkdir(newDirPath, (err) => {
         if(err) {
             console.error(5);
@@ -40,4 +40,4 @@ fs.readdir(argv[0], (err, data) => {
            inpStream.pipe(gzip).pipe(outStream);
         }
     });
-})
+});
